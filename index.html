@@ -20,33 +20,33 @@
 							<li class="menu__item"><a href="#">О нас</a></li>
   							<li class="menu__item"><a href="#">Спецпредложения</a></li> 
 						-->
-						<a href="#" class="menu__link">О нас</a>
-						<a href="#" class="menu__link">Спецпредложения</a>
-						<a href="#" class="menu__link">Консультации</a>
-						<a href="" class="menu__link menu__logo">
+						<a href="#" class="menu__link highlight">О нас</a>
+						<a href="#" class="menu__link highlight">Спецпредложения</a>
+						<a href="#" class="menu__link highlight">Консультации</a>
+						<a href="" class="menu__link menu__logo highlight">
 							<img src="img/abenland..svg" alt="Логотип">
 						</a>
-						<a href="#" class="menu__link">Разработки</a>
-						<a href="#" class="menu__link">Контакты</a>
+						<a href="#" class="menu__link highlight">Разработки</a>
+						<a href="#" class="menu__link highlight">Контакты</a>
 					</li>
 				</ul>
 				<div class="nav-social">
-					<a href="" class="nav-social__logo">
+					<a href="" class="nav-social__logo highlight">
 						<img src="img/instagram.svg" alt="Инстаграм">
 					</a>
-					<a href="" class="nav-social__logo">
+					<a href="" class="nav-social__logo highlight">
 						<img src="img/fb.svg" alt="Фейсбук">
 					</a>
-					<a href="" class="nav-social__logo">
+					<a href="" class="nav-social__logo highlight">
 						<img src="img/vk.svg" alt="Вконтакте">
 					</a>
 				</div>
 			</nav>
 		</div>
 	</header>
-	<main class="main">
+	<main class="main highlight">
 		<div class="container">
-			<section class="preview">
+			<section class="preview highlight">
 				<div class="preview-main">
 					<div class="preview-content">
 						<h1 class="preview-content__title">
@@ -55,7 +55,7 @@
 						<p class="preview-content__text">
 							Разрабатываем планы, консультируем, оцениваем
 						</p>
-						<a href="#" class="preview-content__btn">Связаться с нами</a>
+						<a href="#" class="preview-content__btn highlight">Связаться с нами</a>
 					</div>
 				</div>
 				<div class="preview-cards">
@@ -70,7 +70,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="services">
+			<section class="services highlight">
 				<h2 class="services__title title">Основные услуги</h2>
 				<div class="services-wrap">
 					<div class="services-main">
@@ -103,7 +103,7 @@
 				</div>
 			</section>
 		</div>
-		<section class="blogs">
+		<section class="blogs highlight">
 			<div class="container">
 				<h2 class="blogs__title title">Блог</h2>
 				<div class="blogs-wrap">
@@ -162,29 +162,48 @@
 			</div>
 		</section>
 	</main>
-	<footer class="footer">
+	<footer class="footer highlight">
 		<div class="container">
 			<div class="footer-wrap">
 				<ul class="menu">
 					<li class="menu__list">
-						<a href="#" class="logo">
+						<a href="#" class="logo highlight">
 							<img src="img/foot/abenland. (1).svg" alt="">
 						</a>
 					</li>
-					<li class="menu__list">
+					<li class="menu__list highlight">
 						<a href="#" class="menu__link">Лицензия</a>
 					</li>
-					<li class="menu__list">
+					<li class="menu__list highlight">
 						<a href="#" class="menu__link">Пользовательское соглашение</a>
 					</li>
-					<li class="menu__list">
+					<li class="menu__list highlight">
 						<a href="#" class="menu__link">Партнерам</a>
 					</li>
 				</ul>
-				<span class="year">2021</span>
+				<span class="year"></span>
 			</div>
 		</div>
 	</footer>
+
+	<script>
+  // тогда эту часть пока оставим :-)
+  document.querySelector('.year').textContent = new Date().getFullYear();
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const blocks = document.querySelectorAll('.highlight');
+  blocks.forEach(block => {
+    block.addEventListener('mouseenter', () => {
+      block.style.boxShadow = '0 0 10px rgba(0,0,0,0.3)';
+      block.style.transition = 'box-shadow 0.3s';
+    });
+    block.addEventListener('mouseleave', () => {
+      block.style.boxShadow = 'none';
+    });
+  });
+});
+
+</script>
 </body>
 
 </html>
